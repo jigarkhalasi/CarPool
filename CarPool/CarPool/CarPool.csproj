@@ -190,17 +190,28 @@
     <Compile Include="Controllers\AccountController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\BasedApiController.cs" />
+    <Compile Include="Helper\ApplicationConstant.cs" />
+    <Compile Include="Helper\MailService.cs" />
     <Compile Include="Helper\SimpleAuthorizationServerProvider.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Repository\AuthContext.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Repository\AuthRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Startup.cs" />
     <Content Include="carpoolApp\app.js" />
     <Content Include="carpoolApp\controllers\home\mainController.js" />
     <Content Include="carpoolApp\controllers\home\homeController.js" />
     <Content Include="carpoolApp\controllers\layout\headerController.js" />
+    <Content Include="carpoolApp\controllers\layout\loginController.js" />
+    <Content Include="carpoolApp\controllers\layout\signupController.js" />
+    <Content Include="carpoolApp\services\authInterceptorService.js" />
+    <Content Include="carpoolApp\services\authService.js" />
+    <Content Include="carpoolApp\services\userService.js" />
     <Content Include="carpoolApp\views\blogs\blogs.html" />
     <Content Include="carpoolApp\views\contact\contact.html" />
     <Content Include="carpoolApp\views\home\home.html" />
@@ -313,6 +324,7 @@
     <Content Include="Content\mainThemes\fonts\FontAwesome.otf" />
     <Content Include="Content\mainThemes\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\mainThemes\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\CarpoolPublish.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-local-storage.min.js" />
@@ -368,10 +380,15 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="carpoolApp\directives\" />
-    <Folder Include="carpoolApp\services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarPool.Domain\CarPool.Domain.csproj">
+      <Project>{244bec98-4cb3-4e1a-ba98-4e019cdc216b}</Project>
+      <Name>CarPool.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

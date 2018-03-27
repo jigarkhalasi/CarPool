@@ -1,0 +1,9 @@
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\CarPool.Domain.dll.config
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\CarPool.Domain.dll
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\CarPool.Domain.pdb
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\EntityFramework.dll
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\EntityFramework.SqlServer.dll
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\EntityFramework.xml
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\EntityFramework.SqlServer.xml
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\obj\Release\CarPool.Domain.dll
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\obj\Release\CarPool.Domain.pdb

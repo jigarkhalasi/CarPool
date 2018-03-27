@@ -1,4 +1,5 @@
-﻿using CarPool.Models;
+﻿using CarPool.Helper;
+using CarPool.Models;
 using CarPool.Repository;
 using Microsoft.AspNet.Identity;
 using System;
@@ -12,13 +13,16 @@ using System.Web.Http;
 namespace CarPool.Controllers
 {
     [RoutePrefix("api/Account")]
-    public class AccountController : ApiController
+    public class AccountController : BasedApiController
     {
         private AuthRepository _repo = null;
+
+        private UserRepository _userRepo = null;
 
         public AccountController()
         {
             _repo = new AuthRepository();
+            _userRepo = new UserRepository();
         }
 
         // POST api/Account/Register
@@ -41,6 +45,45 @@ namespace CarPool.Controllers
             }
 
             return Ok();
+        }
+
+
+        // POST api/Account/UpdateUser
+        [HttpPost]
+        [Authorize]
+        [Route("updateUser")]
+        public async Task<IHttpActionResult> UpdateUser(UserModel userModel)
+        {
+            if (userModel != null)
+            {
+                return Ok(await _userRepo.UpdateUser(userModel));
+            }
+            return Ok(false);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [Route("changePassword")]
+        public async Task<IHttpActionResult> ChangePassword(ChangePasswordModel userModel)
+        {
+            if (userModel != null)
+            {
+                return Ok(await _repo.ChangePassword(userModel));
+            }
+            return Ok(false);
+        }
+
+        [HttpPost]
+        [Route("forgotPass")]
+        public async Task<IHttpActionResult> ForgotPassword(string emailId)
+        {
+            var user = await GetUserId(emailId);
+            if (user != null)
+            {
+                var res = MailService.SendMail(emailId, ApplicationConstant.EmailType.ForgotPassword, "data", "data", "data");
+                return Ok(true);
+            }
+            return Ok(false);
         }
 
         protected override void Dispose(bool disposing)
