@@ -9,6 +9,11 @@ app.controller('headerController', ['$scope', '$location', 'localStorageService'
         authService.logOut();
         $location.path('/login');
     }
+
+    $scope.$on('isLogin', function (evt, message) {
+        debugger;
+        hc.showOne = message;
+    });
 }]);
 
 

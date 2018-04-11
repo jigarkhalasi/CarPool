@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('loginController', ['$scope', '$location', 'authService', 'ngAuthSettings', '$state', 'userService', 'localStorageService', 'toastr', '$rootScope', function ($scope, $location, authService, ngAuthSettings, $state, userService, localStorageService, toastr, $rootScope) {
+app.controller('loginController', ['$scope', '$location', 'authService', 'ngAuthSettings', '$state', 'userService', 'localStorageService', 'toastr', function ($scope, $location, authService, ngAuthSettings, $state, userService, localStorageService, toastr) {
 
     var lc = this;
 
@@ -47,7 +47,6 @@ app.controller('loginController', ['$scope', '$location', 'authService', 'ngAuth
             authService.configs.headers.Authorization = "Bearer " + response.data.access_token;
 
             toastr.success('Welcome !!');
-            $scope.$emit('isLogin', response.data.userRole);
             $state.go('home');
 
             //userService.getUserProfileDetails().then(function (results) {

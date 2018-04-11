@@ -224,6 +224,7 @@
   <ItemGroup>
     <Content Include="carpoolApp\views\login\login.html" />
     <Content Include="carpoolApp\views\login\signup.html" />
+    <Content Include="Content\mainThemes\css\angular-toastr.css" />
     <Content Include="Content\mainThemes\css\bootstrap.css" />
     <Content Include="Content\mainThemes\css\contact.css" />
     <Content Include="Content\mainThemes\css\font-awesome.css" />
