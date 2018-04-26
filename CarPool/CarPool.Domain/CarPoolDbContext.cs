@@ -16,6 +16,7 @@ namespace CarPool.Domain
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
+        public virtual DbSet<tblProviderUser> tblProviderUsers { get; set; }
         public virtual DbSet<tblRegistedGroup> tblRegistedGroups { get; set; }
         public virtual DbSet<tblUserRequest> tblUserRequests { get; set; }
         public virtual DbSet<tblUserRGDetail> tblUserRGDetails { get; set; }
