@@ -1,19 +1,11 @@
 ﻿'use strict';
-app.controller('registergroupController', ['$scope', '$location', 'localStorageService', function ($scope, $location, localStorageService) {
+app.controller('registergroupController', ['$scope', '$location', 'localStorageService', 'countries', 'cities', function ($scope, $location, localStorageService, countries, cities) {
 
     var rc = this;
     rc.group = {};
 
-    rc.country = [
-        {
-            id: "1",
-            name: "India"
-        },
-        {
-            id: "2",
-            name: "USA"
-        }
-    ];
+    rc.country = countries;
+    rc.city = cities;
 
     rc.groupType = [
         {
