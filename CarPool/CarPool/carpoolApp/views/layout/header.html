@@ -17,17 +17,17 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <div class="nav_right_top">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="request" ui-sref="login" ng-show="mc.isDisplay == 0">Login</a></li>
+                        <li ui-sref-active="active"><a class="request" ui-sref="login" ng-show="mc.isDisplay == 0">Login</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li class="active"><a ui-sref="home">Home</a></li>
-                        <li><a ui-sref="about">About</a></li>
-                        <li><a ui-sref="group" >Register Group</a></li>
-                        <li><a ui-sref="provider" ng-show="mc.isDisplay == 1 ||mc.isDisplay == 4">Provider</a></li>
-                        <li><a ui-sref="support" ng-show="(mc.isDisplay != 0 && mc.isDisplay != 3)">Support</a></li>
-                        <li><a ui-sref="blogs">Blogs</a></li>
-                        <li><a ui-sref="contact">Contact</a></li>
-                        <li><a ui-sref="logout" ng-show="mc.isDisplay == 0">LogOut</a></li>
+                        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                        <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+                        <li ui-sref-active="active"><a ui-sref="group">Register Group</a></li>
+                        <li ui-sref-active="active"><a ui-sref="provider" ng-show="mc.isDisplay == 1 ||mc.isDisplay == 4">Provider</a></li>
+                        <li ui-sref-active="active"><a ui-sref="support" ng-show="(mc.isDisplay != 0 && mc.isDisplay != 3)">Support</a></li>
+                        <li ui-sref-active="active"><a ui-sref="blogs">Blogs</a></li>
+                        <li ui-sref-active="active"><a ui-sref="contact">Contact</a></li>
+                        <li><a ng-click="mc.logout()" ng-show="mc.isDisplay != 0" style="cursor:pointer;">LogOut </a></li>
                     </ul>
                 </div>
             </div>

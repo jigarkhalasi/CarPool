@@ -96,13 +96,24 @@ app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptorService');
 });
 
-app.run(['authService', '$rootScope', '$location', '$state', 'localStorageService', function (authService, $rootScope, $location, $state, localStorageService) {
+app.run(['authService', '$rootScope', '$location', '$state', 'localStorageService', '$stateParams', function (authService, $rootScope, $location, $state, localStorageService, $stateParams) {
     authService.fillAuthData();
+    debugger;
+    var userInfo = localStorageService.get('authorizationData');
+
+    if (userInfo == null) {
+        $state.go('home');// go to login
+    }
+    else {
+        console.log(userInfo);
+        //$rootScope.$emit('isLogin', userInfo.userRole);
+        $state.go($state.current, { reload: true, inherit: false });
+    }
 
     
     $rootScope.$on('stateChangeStart', function (e, toState, toParams
                                                , fromState, fromParams) {
-
+        debugger;
         var isLogin = toState.name === "login";
         if (isLogin) {
             return; // no need to redirect 

@@ -42,7 +42,7 @@ app.controller('loginController', ['$scope', '$location', 'authService', 'ngAuth
                 authService.authentication.permission.push("Provider");
             }
 
-            localStorageService.set('authorizationData', { isAuth: authService.authentication.isAuth, token: response.data.access_token, userName: lc.loginData.userName, userRole: authService.authentication.userRole, permission: authService.authentication.permission, refreshToken: "", useRefreshTokens: false });
+            localStorageService.set('authorizationData', { isAuth: authService.authentication.isAuth, token: response.data.access_token, userName: lc.loginData.userName, userRole: response.data.userRole, permission: authService.authentication.permission, refreshToken: "", useRefreshTokens: false });
 
             authService.configs.headers.Authorization = "Bearer " + response.data.access_token;
 
