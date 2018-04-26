@@ -7,3 +7,4 @@ D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\EntityFramework.xm
 D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\bin\Release\EntityFramework.SqlServer.xml
 D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\obj\Release\CarPool.Domain.dll
 D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\obj\Release\CarPool.Domain.pdb
+D:\Carpool\Project\CarPool\CarPool\CarPool.Domain\obj\Release\CarPool.Domain.csprojResolveAssemblyReference.cache

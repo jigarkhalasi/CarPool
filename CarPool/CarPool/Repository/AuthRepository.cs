@@ -29,7 +29,7 @@ namespace CarPool.Repository
         {
             IdentityUser user = new IdentityUser
             {
-                UserName = userModel.UserName,
+                UserName = userModel.Email,
                 Email = userModel.Email
             };
             var result = await _userManager.CreateAsync(user, userModel.Password);

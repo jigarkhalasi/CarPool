@@ -85,51 +85,60 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 
 });
 
-//var serviceBase = 'http://localhost:57855/';
+var serviceBase = 'http://localhost:50182/';
 //var serviceBase = 'http://astha.jigarkhalas.info/';
-//app.constant('ngAuthSettings', {
-//    apiServiceBaseUri: serviceBase,
-//    clientId: 'ngAuthApp'
-//});
+app.constant('ngAuthSettings', {
+    apiServiceBaseUri: serviceBase,
+    clientId: 'ngAuthApp'
+});
 
-//app.config(function ($httpProvider) {
-//    $httpProvider.interceptors.push('authInterceptorService');
-//});
+app.config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorService');
+});
 
-//app.run(['authService', '$rootScope', '$location', '$state', 'localStorageService', function (authService, $rootScope, $location, $state, localStorageService) {
-//    authService.fillAuthData();
+app.run(['authService', '$rootScope', '$location', '$state', 'localStorageService', '$stateParams', function (authService, $rootScope, $location, $state, localStorageService, $stateParams) {
+    authService.fillAuthData();
+    debugger;
+    var userInfo = localStorageService.get('authorizationData');
+
+    if (userInfo == null) {
+        $state.go('home');// go to login
+    }
+    else {
+        console.log(userInfo);
+        //$rootScope.$emit('isLogin', userInfo.userRole);
+        $state.go($state.current, { reload: true, inherit: false });
+    }
 
     
-//    $rootScope.$on('stateChangeStart', function (e, toState, toParams
-//                                               , fromState, fromParams) {
+    $rootScope.$on('stateChangeStart', function (e, toState, toParams
+                                               , fromState, fromParams) {
+        debugger;
+        var isLogin = toState.name === "login";
+        if (isLogin) {
+            return; // no need to redirect 
+        }
 
-//        debugger;
+        // now, redirect only not authenticated        
+        var userInfo = localStorageService.get('authorizationData');
 
-//        var isLogin = toState.name === "login";
-//        if (isLogin) {
-//            return; // no need to redirect 
-//        }
+        if (userInfo == null && userInfo.isAuth === false) {
+            e.preventDefault(); // stop current execution
+            $state.go('login'); // go to login
+        }
 
-//        // now, redirect only not authenticated        
-//        var userInfo = localStorageService.get('authorizationData');
+        //if (userInfo.userRole == "1") {
+            $state.go('home');
+        //}
+        //else if (userInfo.userRole == "2") {
+        //    $state.go('home.dashboard');
+        //}
+        //else if (userInfo.userRole == "3") {
+        //    $state.go('home.organization');
+        //}
+        //else if (userInfo.userRole == "4") {
+        //    $state.go('home.organization');
+        //}
+    });
 
-//        if (userInfo == null && userInfo.isAuth === false) {
-//            e.preventDefault(); // stop current execution
-//            $state.go('login'); // go to login
-//        }
-
-//        if (userInfo.userRole == "1") {
-//            $state.go('home.dashboard');
-//        }
-//        else if (userInfo.userRole == "2") {
-//            $state.go('home.dashboard');
-//        }
-//        else if (userInfo.userRole == "3") {
-//            $state.go('home.organization');
-//        }
-//        else if (userInfo.userRole == "4") {
-//            $state.go('home.organization');
-//        }
-//    });
-
-//}]);
+}]);

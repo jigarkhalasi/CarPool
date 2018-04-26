@@ -1,4 +1,4 @@
-﻿<div class="banner_bottom">
+﻿<div class="banner_bottom" ng-controller="signupController as sc">
     <div class="container">
         <div class="tittle-w3ls_head">
             <h3 class="tittle-w3ls three">Sign Up <span>Now </span></h3>
@@ -6,16 +6,22 @@
         <div class="inner_sec_info_wthree_agile">
             <div class="signin-form">
                 <div class="login-form-rec">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="First Name" required="">
-                        <input type="text" name="name" placeholder="Last Name" required="">
-                        <input type="email" name="email" placeholder="Email" required="">
-                        <input type="password" name="password" id="password1" placeholder="Password" required="">
-                        <input type="password" name="password" id="password2" placeholder="Confirm Password" required="">
+                    <form ng-submit="sc.submit()">
+                        <input type="text" name="name" placeholder="First Name" required="" ng-model="sc.signupData.firstName">
+                        <input type="text" name="name" placeholder="Last Name" required="" ng-model="sc.signupData.lastName">
+                        <input type="email" name="email" placeholder="Email" required="" ng-model="sc.signupData.email">
+                        <input type="text" name="name" placeholder="password" required="" ng-model="sc.signupData.password">
+                        <select class="form-control" ng-model="sc.signupData.userRole" required name="selected_orgTypeId" ng-options="item.id as item.roleName for item in sc.roleList">
+                            <option value=""> -- Select Role --</option>
+                        </select>
                         <input type="submit" value="Sign Up">
                     </form>
                 </div>
-                <p class="reg"><a href="#"> By clicking Signup, I agree to your terms</a></p>
+                <p>
+                    {{ sc.message }}
+                </p>
+                
+                <!--<p class="reg"><a href="#"> By clicking Signup, I agree to your terms</a></p>-->
 
             </div>
         </div>

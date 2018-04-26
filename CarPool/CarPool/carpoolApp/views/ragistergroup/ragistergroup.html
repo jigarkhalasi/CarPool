@@ -1,0 +1,125 @@
+﻿    <!--/ab-->
+<div class="banner_bottom" ng-controller="registergroupController as rc">
+    <div class="container">
+        <h3 class="tittle-w3ls">Register Group</h3>
+        <div class="inner_sec_info_wthree_agile">
+            <div class="help_full">
+                <div class="login-form-rec">
+                    <form ng-submit="rc.submitEditUser()" name="editgroup" >
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Select county</label>
+                                    <select class="form-control" ng-model="rc.group.groupId" required name="selected_groupId" ng-options="item.id as item.name for item in rc.country">
+                                        <option value=""> -- Select Country --</option>
+                                    </select>
+                                    <span ng-show="(editgroup.selected_groupId.$dirty || rc.submitted) && editgroup.selected_groupId.$error.required" class="text-danger">Select Country</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Select GroupType</label>
+                                    <select class="form-control" ng-model="rc.group.groupTypeId" required name="selected_groupTypeId" ng-options="item.id as item.name for item in rc.groupType">
+                                        <option value=""> -- Select Group Type --</option>
+                                    </select>
+                                    <span ng-show="(editgroup.selected_groupTypeId.$dirty || rc.submitted) && editgroup.selected_groupTypeId.$error.required" class="text-danger">Select groupType</span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Group Name</label>
+                                    <input type="text" class="form-control" name="groupname" ng-model="rc.group.groupname" required>
+                                    <span ng-show="(editgroup.groupname.$dirty || rc.submitted) && editgroup.groupname.$error.required" class="text-danger">
+                                        Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Start Date </label>
+                                    <input type="text" class="form-control" name="groupstartdate" ng-model="rc.group.groupstartdate" required>
+                                    <span ng-show="(editgroup.groupstartdate.$dirty || rc.submitted) && editgroup.groupstartdate.$error.required" class="text-danger">
+                                        StartDate is required
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">End Date</label>
+                                    <input type="text" class="form-control" name="groupenddate" ng-model="rc.group.groupenddate" required>
+                                    <span ng-show="(editgroup.groupenddate.$dirty || rc.submitted) && editgroup.groupenddate.$error.required" class="text-danger">
+                                        End Date
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Group Name</label>
+                                    <input type="text" class="form-control" name="groupname" ng-model="rc.group.groupname" required>
+                                    <span ng-show="(editgroup.groupname.$dirty || euc.submitted) && editgroup.groupname.$error.required" class="text-danger">
+                                        Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Group Name</label>
+                                    <input type="text" class="form-control" name="groupname" ng-model="rc.group.groupname" required>
+                                    <span ng-show="(editgroup.groupname.$dirty || euc.submitted) && editgroup.groupname.$error.required" class="text-danger">
+                                        Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Group Name</label>
+                                    <input type="text" class="form-control" name="groupname" ng-model="rc.group.groupname" required>
+                                    <span ng-show="(editgroup.groupname.$dirty || euc.submitted) && editgroup.groupname.$error.required" class="text-danger">
+                                        Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Group Name</label>
+                                    <input type="text" class="form-control" name="groupname" ng-model="rc.group.groupname" required>
+                                    <span ng-show="(editgroup.groupname.$dirty || euc.submitted) && editgroup.groupname.$error.required" class="text-danger">
+                                        Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-control-label">Group Name</label>
+                                    <input type="text" class="form-control" name="groupname" ng-model="rc.group.groupname" required>
+                                    <span ng-show="(editgroup.groupname.$dirty || euc.submitted) && editgroup.groupname.$error.required" class="text-danger">
+                                        Name is required
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//ab-->

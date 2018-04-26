@@ -209,6 +209,7 @@
     <Content Include="carpoolApp\controllers\layout\headerController.js" />
     <Content Include="carpoolApp\controllers\layout\loginController.js" />
     <Content Include="carpoolApp\controllers\layout\signupController.js" />
+    <Content Include="carpoolApp\controllers\registergroup\registergroupController.js" />
     <Content Include="carpoolApp\services\authInterceptorService.js" />
     <Content Include="carpoolApp\services\authService.js" />
     <Content Include="carpoolApp\services\userService.js" />
@@ -224,6 +225,8 @@
   <ItemGroup>
     <Content Include="carpoolApp\views\login\login.html" />
     <Content Include="carpoolApp\views\login\signup.html" />
+    <Content Include="carpoolApp\views\ragistergroup\ragistergroup.html" />
+    <Content Include="Content\mainThemes\css\angular-toastr.css" />
     <Content Include="Content\mainThemes\css\bootstrap.css" />
     <Content Include="Content\mainThemes\css\contact.css" />
     <Content Include="Content\mainThemes\css\font-awesome.css" />
