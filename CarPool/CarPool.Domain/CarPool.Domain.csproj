@@ -54,6 +54,7 @@
     <Compile Include="AspNetUserLogin.cs" />
     <Compile Include="CarPoolDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tblProviderUser.cs" />
     <Compile Include="tblRegistedGroup.cs" />
     <Compile Include="tblUserRequest.cs" />
     <Compile Include="tblUserRGDetail.cs" />

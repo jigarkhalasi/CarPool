@@ -191,6 +191,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Controllers\BasedApiController.cs" />
+    <Compile Include="Controllers\ProviderController.cs" />
+    <Compile Include="Controllers\UserGroupRequestController.cs" />
     <Compile Include="Helper\ApplicationConstant.cs" />
     <Compile Include="Helper\MailService.cs" />
     <Compile Include="Helper\SimpleAuthorizationServerProvider.cs" />
@@ -201,6 +203,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Repository\AuthRepository.cs" />
+    <Compile Include="Repository\ProviderRepository.cs" />
+    <Compile Include="Repository\UserGroupRequestRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Startup.cs" />
     <Content Include="carpoolApp\app.js" />
