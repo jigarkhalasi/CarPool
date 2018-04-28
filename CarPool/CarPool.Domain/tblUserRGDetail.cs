@@ -9,7 +9,6 @@ namespace CarPool.Domain
     public partial class tblUserRGDetail
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int GRId { get; set; }
 
         [StringLength(50)]
@@ -22,6 +21,8 @@ namespace CarPool.Domain
 
         [MaxLength(50)]
         public byte[] ImagePath { get; set; }
+
+        public string RGToken { get; set; }
 
         public bool? IsActivate { get; set; }
 

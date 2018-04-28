@@ -10,7 +10,6 @@ namespace CarPool.Domain
     public partial class tblRegistedGroup
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RGroupId { get; set; }
 
         public int? RGType { get; set; }
@@ -28,7 +27,7 @@ namespace CarPool.Domain
 
         public DateTime? RGCreatedDate { get; set; }
 
-        public byte[] RGImagePath { get; set; }
+        public string RGImagePath { get; set; }
 
         public bool? IsAutoRegister { get; set; }
 
@@ -40,6 +39,8 @@ namespace CarPool.Domain
         public int? City { get; set; }
 
         public int? Country { get; set; }
+
+        public string GroupAdmin { get; set; }
 
         public bool? IsActivate { get; set; }
 

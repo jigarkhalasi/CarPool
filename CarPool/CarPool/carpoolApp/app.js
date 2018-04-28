@@ -92,11 +92,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             'footer': footer
         }
     })
+    .state('provider', {
+        url: '/provider',
+        views: {
+            'header': header,
+            'content': {
+                templateUrl: '/carpoolApp/views/provider/provider.html'
+            },
+            'footer': footer
+        }
+    })
 
 });
 
 var serviceBase = 'http://localhost:50182/';
-//var serviceBase = 'http://astha.jigarkhalas.info/';
+//var serviceBase = 'http://cp.synebyte.com/';
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
     clientId: 'ngAuthApp'
@@ -155,11 +165,11 @@ app.run(['authService', '$rootScope', '$location', '$state', 'localStorageServic
 
 app.constant("countries", [
     {
-        id: "1",
+        id: 1,
         name: "India"
     },
     {
-        id: "2",
+        id: 2,
         name: "USA"
     }
 ]);

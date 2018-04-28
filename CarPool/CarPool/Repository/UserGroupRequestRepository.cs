@@ -19,6 +19,8 @@ namespace CarPool.Repository
         public async Task<bool> AddUserGroupRequest(tblUserRGDetail model)
         {
             model.CreatedDate = DateTime.UtcNow;
+            model.IsActivate = false;
+            model.IsDeleted = false;
             _context.tblUserRGDetails.Add(model);
             return await _context.SaveChangesAsync() > 0;
         }
@@ -46,14 +48,14 @@ namespace CarPool.Repository
         {
             return await Task.Run(() =>
             {
-                return _context.tblUserRGDetails.ToList();
+                return _context.tblUserRGDetails.Where(x=> x.IsDeleted == false).ToList();
             });
         }
 
         public async Task<bool> DeleteUserGroupRequestById(int grId)
         {
             var data = await _context.tblUserRGDetails.FindAsync(grId);
-            data.IsActivate = false;
+            data.IsDeleted = true;
             return await _context.SaveChangesAsync() > 0;
         }
     }
