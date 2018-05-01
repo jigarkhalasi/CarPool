@@ -1,13 +1,13 @@
 ﻿'use strict';
-app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
+app.factory('registerGroupService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
 
     var serviceBase = ngAuthSettings.apiServiceBaseUri;
 
-    var userGroupRequestFactory = {};
+    var registerGroupServiceFactory = {};
 
-    var _getUserGroupRequest = function (rGroupId) {
+    var _getRegisterGroup = function () {
 
-        return $http.get(serviceBase + 'api/userGroupRequest/getallUserGroupRequest?rGroupId=' + rGroupId).then(
+        return $http.get(serviceBase + 'api/registergroup/getallRegistergroup').then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -20,11 +20,11 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
                        });
     };
 
-    var _addupdateUserGroupRequest = function (rgroupData) {
+    var _addupdateRegisterGroup = function (rgroupData) {
 
         debugger;
-        if (rgroupData.gRId > 0) {
-            return $http.post(serviceBase + 'api/userGroupRequest/updateUserGroupRequest', rgroupData).then(
+        if (rgroupData.rGroupId > 0) {
+            return $http.post(serviceBase + 'api/registergroup/updateRegistergroup', rgroupData).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -36,8 +36,8 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
                            return response;
                        });
         }
-        else {
-            return $http.post(serviceBase + 'api/userGroupRequest/addUserGroupRequest', rgroupData).then(
+        else{
+            return $http.post(serviceBase + 'api/registergroup/addRegistergroup', rgroupData).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -52,9 +52,9 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
 
     };
 
-    var _getEditUserGroupRequest = function (userRequestId) {
+    var _getEditRegisterGroup = function (rGroupId) {
 
-        return $http.get(serviceBase + 'api/userGroupRequest/getUserGroupRequestById?userRequestId=' + userRequestId).then(
+        return $http.get(serviceBase + 'api/registergroup/getRegistergroupById?rGroupId=' + rGroupId).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -67,26 +67,9 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
                        });
     };
 
-    var _deleteUserGroupRequest = function (userRequestId) {
+    var _deleteRegisterGroup = function (rGroupId) {
 
-        return $http.post(serviceBase + 'api/userGroupRequest/deleteUserGroupRequest?userRequestId=' + userRequestId).then(
-                       function (response) {
-                           // success callback
-                           console.log(response);
-                           return response;
-                       },
-                       function (response) {
-                           // failure call back
-                           console.log(response);
-                           return response;
-                       });
-    };
-
-    var _approveRejectUserGroupRequest = function (urData) {
-
-        debugger;
-        console.log();
-        return $http.post(serviceBase + 'api/userGroupRequest/approveRejectUserGroupRequest', urData).then(
+        return $http.post(serviceBase + 'api/registergroup/deleteRegistergroup?rGroupId=' + rGroupId).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -100,13 +83,11 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
     };
 
 
-    userGroupRequestFactory.getUserGroupRequest = _getUserGroupRequest;
-    userGroupRequestFactory.addupdateUserGroupRequest = _addupdateUserGroupRequest;
-    userGroupRequestFactory.getEditUserGroupRequest = _getEditUserGroupRequest;
-    userGroupRequestFactory.deleteUserGroupRequest = _deleteUserGroupRequest;
-    userGroupRequestFactory.approveRejectUserGroupRequest = _approveRejectUserGroupRequest;
-    
+    registerGroupServiceFactory.getRegisterGroup = _getRegisterGroup;    
+    registerGroupServiceFactory.addupdateRegisterGroup = _addupdateRegisterGroup;
+    registerGroupServiceFactory.getEditRegisterGroup = _getEditRegisterGroup;
+    registerGroupServiceFactory.deleteRegisterGroup = _deleteRegisterGroup;
 
-    return userGroupRequestFactory;
+    return registerGroupServiceFactory;
 
 }]);

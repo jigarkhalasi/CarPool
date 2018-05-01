@@ -102,6 +102,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             'footer': footer
         }
     })
+    .state('userGroupRequest', {
+        url: '/userGroupRequest/:rGroupId',
+        views: {
+            'header': header,
+            'content': {
+                templateUrl: '/carpoolApp/views/ragistergroup/userGroupRequest.html'
+            },
+            'footer': footer
+        }
+    })
 
 });
 

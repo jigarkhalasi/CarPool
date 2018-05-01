@@ -1,4 +1,5 @@
 ﻿using CarPool.Domain;
+using CarPool.Models;
 using CarPool.Repository;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,12 @@ namespace CarPool.Controllers
         [HttpGet]
         [Authorize]
         [Route("getallUserGroupRequest")]
-        public async Task<IHttpActionResult> GetAllUserGroupRequest()
+        public async Task<IHttpActionResult> GetAllUserGroupRequest(int rGroupId)
         {
             var user = await GetUserId(Authentication.User.Identity.Name);
             if (user != null)
             {
-                var providerData = await UserGroupRequestRepo.GetAllUserGroupRequest();
+                var providerData = await UserGroupRequestRepo.GetAllUserGroupRequest(rGroupId);
                 return Ok(providerData);
             }
             return Ok(false);
@@ -36,12 +37,12 @@ namespace CarPool.Controllers
         [HttpGet]
         [Authorize]
         [Route("getUserGroupRequestById")]
-        public async Task<IHttpActionResult> GetUserGroupRequestById(int grId)
+        public async Task<IHttpActionResult> GetUserGroupRequestById(int userRequestId)
         {
             var user = await GetUserId(Authentication.User.Identity.Name);
             if (user != null)
             {
-                var providerData = await UserGroupRequestRepo.GetUserGroupRequestById(grId);
+                var providerData = await UserGroupRequestRepo.GetUserGroupRequestById(userRequestId);
                 return Ok(providerData);
             }
             return Ok(false);
@@ -80,12 +81,33 @@ namespace CarPool.Controllers
         [HttpPost]
         [Authorize]
         [Route("deleteUserGroupRequest")]
-        public async Task<IHttpActionResult> DeleteUserGroupRequest(int grId)
+        public async Task<IHttpActionResult> DeleteUserGroupRequest(int userRequestId)
         {
             var user = await GetUserId(Authentication.User.Identity.Name);
-            if (grId != 0 && user != null)
+            if (userRequestId != 0 && user != null)
             {
-                return Ok(await UserGroupRequestRepo.DeleteUserGroupRequestById(grId));
+                return Ok(await UserGroupRequestRepo.DeleteUserGroupRequestById(userRequestId));
+            }
+            return Ok(false);
+        }
+
+        [HttpPost]
+        [Authorize]
+        [Route("approveRejectUserGroupRequest")]
+        public async Task<IHttpActionResult> approveRejectUserGroupRequest(tblUserRGDetail model)
+        {
+            var user = await GetUserId(Authentication.User.Identity.Name);
+            if (model != null && user != null)
+            {
+                var data = await UserGroupRequestRepo.approveRejectUserGroupRequest(model);
+                if (data != null && data.IsActivate == true)
+                {
+                    //send 
+                }
+                else { 
+                    //send
+                }
+                return Ok(true);
             }
             return Ok(false);
         }

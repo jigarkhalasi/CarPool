@@ -13,10 +13,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2018 14:14:06</publishTime>
     </File>
     <File Include="bin/CarPool.dll">
-      <publishTime>04/25/2018 22:37:10</publishTime>
+      <publishTime>04/29/2018 10:55:51</publishTime>
     </File>
     <File Include="bin/CarPool.Domain.dll">
-      <publishTime>04/25/2018 22:37:10</publishTime>
+      <publishTime>04/29/2018 10:54:58</publishTime>
     </File>
     <File Include="bin/de/Microsoft.Data.Edm.resources.dll">
       <publishTime>03/06/2018 14:14:03</publishTime>
@@ -202,13 +202,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2018 14:14:02</publishTime>
     </File>
     <File Include="carpoolApp/app.js">
-      <publishTime>04/25/2018 22:31:45</publishTime>
+      <publishTime>04/29/2018 10:54:13</publishTime>
     </File>
     <File Include="carpoolApp/controllers/home/homeController.js">
       <publishTime>03/27/2018 22:49:58</publishTime>
     </File>
     <File Include="carpoolApp/controllers/home/mainController.js">
-      <publishTime>04/25/2018 22:35:29</publishTime>
+      <publishTime>04/28/2018 11:06:08</publishTime>
     </File>
     <File Include="carpoolApp/controllers/layout/headerController.js">
       <publishTime>04/10/2018 21:32:35</publishTime>
@@ -219,14 +219,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="carpoolApp/controllers/layout/signupController.js">
       <publishTime>04/09/2018 23:01:17</publishTime>
     </File>
+    <File Include="carpoolApp/controllers/provider/providerController.js">
+      <publishTime>04/28/2018 15:24:43</publishTime>
+    </File>
+    <File Include="carpoolApp/controllers/registergroup/registergroupController.js">
+      <publishTime>04/29/2018 08:50:20</publishTime>
+    </File>
+    <File Include="carpoolApp/controllers/registergroup/userGroupRequestController.js">
+      <publishTime>04/29/2018 10:49:45</publishTime>
+    </File>
     <File Include="carpoolApp/services/authInterceptorService.js">
       <publishTime>04/25/2018 21:13:21</publishTime>
     </File>
     <File Include="carpoolApp/services/authService.js">
       <publishTime>04/09/2018 22:34:17</publishTime>
     </File>
+    <File Include="carpoolApp/services/providerService.js">
+      <publishTime>04/28/2018 15:22:11</publishTime>
+    </File>
+    <File Include="carpoolApp/services/registerGroupService.js">
+      <publishTime>04/28/2018 10:37:56</publishTime>
+    </File>
+    <File Include="carpoolApp/services/userGroupRequestService.js">
+      <publishTime>04/29/2018 10:48:20</publishTime>
+    </File>
     <File Include="carpoolApp/services/userService.js">
-      <publishTime>03/27/2018 22:32:00</publishTime>
+      <publishTime>04/28/2018 12:08:21</publishTime>
     </File>
     <File Include="carpoolApp/views/about/about.html">
       <publishTime>03/11/2018 12:35:13</publishTime>
@@ -244,13 +262,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/11/2018 13:00:50</publishTime>
     </File>
     <File Include="carpoolApp/views/layout/header.html">
-      <publishTime>04/25/2018 21:33:33</publishTime>
+      <publishTime>04/26/2018 20:47:42</publishTime>
     </File>
     <File Include="carpoolApp/views/login/login.html">
       <publishTime>04/09/2018 21:58:41</publishTime>
     </File>
     <File Include="carpoolApp/views/login/signup.html">
       <publishTime>04/09/2018 22:58:53</publishTime>
+    </File>
+    <File Include="carpoolApp/views/provider/provider.html">
+      <publishTime>04/28/2018 15:21:02</publishTime>
+    </File>
+    <File Include="carpoolApp/views/ragistergroup/ragistergroup.html">
+      <publishTime>04/29/2018 08:57:06</publishTime>
+    </File>
+    <File Include="carpoolApp/views/ragistergroup/userGroupRequest.html">
+      <publishTime>04/29/2018 10:52:58</publishTime>
     </File>
     <File Include="Content/mainThemes/css/angular-toastr.css">
       <publishTime>02/09/2018 09:36:05</publishTime>
@@ -679,13 +706,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/06/2018 14:13:58</publishTime>
     </File>
     <File Include="Views/Index.html">
-      <publishTime>04/09/2018 21:54:11</publishTime>
+      <publishTime>04/28/2018 14:12:50</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/06/2018 14:13:45</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/25/2018 14:27:12</publishTime>
+      <publishTime>04/29/2018 10:54:59</publishTime>
     </File>
   </ItemGroup>
 </Project>

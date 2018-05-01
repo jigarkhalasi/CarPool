@@ -1,3 +1,4 @@
+D:\Carpool\Project\CarPool\CarPool\CarPool\bin\EntityFramework.xml
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\CarPool.dll.config
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\CarPool.dll
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\CarPool.pdb
@@ -38,7 +39,6 @@ D:\Carpool\Project\CarPool\CarPool\CarPool\bin\System.Web.WebPages.dll
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\System.Web.WebPages.Razor.dll
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\WebGrease.dll
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\CarPool.Domain.pdb
-D:\Carpool\Project\CarPool\CarPool\CarPool\bin\EntityFramework.xml
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\EntityFramework.SqlServer.xml
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\Microsoft.AspNet.Identity.Core.xml
 D:\Carpool\Project\CarPool\CarPool\CarPool\bin\Microsoft.AspNet.Identity.EntityFramework.xml

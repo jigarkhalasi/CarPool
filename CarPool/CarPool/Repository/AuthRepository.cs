@@ -40,12 +40,21 @@ namespace CarPool.Repository
                 //Assign Role to user Here      
                 await _userManager.AddToRoleAsync(user.Id, userModel.UserRole);
 
-                //add the register model faculty
-                var userData = _newCtx.AspNetUsers.Where(x => x.UserName == userModel.UserName).FirstOrDefault();
-                userData.FirstName = userModel.FirstName;
-                userData.LastName = userModel.LastName;
+                try
+                {
+                    //add the register model faculty
+                    var userData = _newCtx.AspNetUsers.Where(x => x.Email == userModel.Email).FirstOrDefault();
+                    userData.FirstName = userModel.FirstName;
+                    userData.LastName = userModel.LastName;
 
-                await _newCtx.SaveChangesAsync(); 
+                    await _newCtx.SaveChangesAsync(); 
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw;
+                }
+                
 
                 //send the email
                 //var res = MailService.SendMail(userModel.Email, ApplicationConstant.EmailType.Registration, "data", "data", "data");

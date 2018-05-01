@@ -24,7 +24,8 @@ app.controller('mainController', ['$scope', 'localStorageService', 'toastr', '$s
         localStorageService.remove('userInfoData');
         mc.isDisplay = 0;
         authService.logOut();
-        $state.go($state.current, { reload: true, inherit: false });
+        $state.go('home');
+        //$state.go($state.current, { reload: true, inherit: false });
     }
 
     //mc.isActive = function (viewLocation) {

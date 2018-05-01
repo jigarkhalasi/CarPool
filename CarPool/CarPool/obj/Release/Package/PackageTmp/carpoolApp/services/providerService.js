@@ -1,13 +1,13 @@
 ﻿'use strict';
-app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
+app.factory('providerService', ['$http', 'ngAuthSettings', function ($http, ngAuthSettings) {
 
     var serviceBase = ngAuthSettings.apiServiceBaseUri;
 
-    var userGroupRequestFactory = {};
+    var providerGroupServiceFactory = {};
 
-    var _getUserGroupRequest = function (rGroupId) {
+    var _getProvider = function () {
 
-        return $http.get(serviceBase + 'api/userGroupRequest/getallUserGroupRequest?rGroupId=' + rGroupId).then(
+        return $http.get(serviceBase + 'api/provider/getallprovider').then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -20,11 +20,11 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
                        });
     };
 
-    var _addupdateUserGroupRequest = function (rgroupData) {
+    var _addupdateProvider = function (rgroupData) {
 
         debugger;
-        if (rgroupData.gRId > 0) {
-            return $http.post(serviceBase + 'api/userGroupRequest/updateUserGroupRequest', rgroupData).then(
+        if (rgroupData.providerId > 0) {
+            return $http.post(serviceBase + 'api/provider/updateProvider', rgroupData).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -37,7 +37,7 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
                        });
         }
         else {
-            return $http.post(serviceBase + 'api/userGroupRequest/addUserGroupRequest', rgroupData).then(
+            return $http.post(serviceBase + 'api/provider/addProvider', rgroupData).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -52,9 +52,9 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
 
     };
 
-    var _getEditUserGroupRequest = function (userRequestId) {
+    var _getEditProvider = function (providerId) {
 
-        return $http.get(serviceBase + 'api/userGroupRequest/getUserGroupRequestById?userRequestId=' + userRequestId).then(
+        return $http.get(serviceBase + 'api/provider/getproviderById?providerId=' + providerId).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -67,26 +67,9 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
                        });
     };
 
-    var _deleteUserGroupRequest = function (userRequestId) {
+    var _deleteProvider = function (providerId) {
 
-        return $http.post(serviceBase + 'api/userGroupRequest/deleteUserGroupRequest?userRequestId=' + userRequestId).then(
-                       function (response) {
-                           // success callback
-                           console.log(response);
-                           return response;
-                       },
-                       function (response) {
-                           // failure call back
-                           console.log(response);
-                           return response;
-                       });
-    };
-
-    var _approveRejectUserGroupRequest = function (urData) {
-
-        debugger;
-        console.log();
-        return $http.post(serviceBase + 'api/userGroupRequest/approveRejectUserGroupRequest', urData).then(
+        return $http.post(serviceBase + 'api/provider/deleteProvider?providerId=' + providerId).then(
                        function (response) {
                            // success callback
                            console.log(response);
@@ -100,13 +83,11 @@ app.factory('userGroupRequestService', ['$http', 'ngAuthSettings', function ($ht
     };
 
 
-    userGroupRequestFactory.getUserGroupRequest = _getUserGroupRequest;
-    userGroupRequestFactory.addupdateUserGroupRequest = _addupdateUserGroupRequest;
-    userGroupRequestFactory.getEditUserGroupRequest = _getEditUserGroupRequest;
-    userGroupRequestFactory.deleteUserGroupRequest = _deleteUserGroupRequest;
-    userGroupRequestFactory.approveRejectUserGroupRequest = _approveRejectUserGroupRequest;
-    
+    providerGroupServiceFactory.getProvider = _getProvider;
+    providerGroupServiceFactory.addupdateProvider = _addupdateProvider;
+    providerGroupServiceFactory.getEditProvider = _getEditProvider;
+    providerGroupServiceFactory.deleteProvider = _deleteProvider;
 
-    return userGroupRequestFactory;
+    return providerGroupServiceFactory;
 
 }]);

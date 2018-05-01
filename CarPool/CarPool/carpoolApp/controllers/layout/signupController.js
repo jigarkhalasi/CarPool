@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.controller('signupController', ['$scope', '$location', 'authService', 'ngAuthSettings', '$state', 'userService', 'localStorageService', 'toastr', function ($scope, $location, authService, ngAuthSettings, $state, userService, localStorageService, toastr) {
+app.controller('signupController', ['$scope', '$location', 'authService', 'ngAuthSettings', '$state', 'userService', 'localStorageService', 'toastr', '$timeout', function ($scope, $location, authService, ngAuthSettings, $state, userService, localStorageService, toastr, $timeout) {
 
     var sc = this;
 
@@ -20,10 +20,10 @@ app.controller('signupController', ['$scope', '$location', 'authService', 'ngAut
             id: "GropAdmin",
             roleName: "GropAdmin"
         },
-        {
-            id: "Provider",
-            roleName: "Provider"
-        },
+        //{
+        //    id: "Provider",
+        //    roleName: "Provider"
+        //},
         {
             id: "User",
             roleName: "User"
@@ -32,11 +32,13 @@ app.controller('signupController', ['$scope', '$location', 'authService', 'ngAut
 
 
     sc.submit = function () {
+        console.log(sc.signupData);
         authService.saveRegistration(sc.signupData).then(function (response) {
 
             sc.savedSuccessfully = true;
             sc.message = "User has been registered successfully, you will be redicted to login page in 2 seconds.";
-            startTimer();
+            $state.go('login');
+            //startTimer();
 
         },
    function (response) {
@@ -53,7 +55,7 @@ app.controller('signupController', ['$scope', '$location', 'authService', 'ngAut
     var startTimer = function () {
         var timer = $timeout(function () {
             $timeout.cancel(timer);
-            $state.path('/login');
+            $state.go('/login');
         }, 2000);
     }
 }]);

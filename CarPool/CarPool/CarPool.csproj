@@ -198,6 +198,7 @@
     <Compile Include="Helper\MailService.cs" />
     <Compile Include="Helper\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ApproveUserRequestModel.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Repository\AuthContext.cs">
@@ -369,7 +370,9 @@
     <Content Include="Scripts\ui-bootstrap-tpls.min.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Views\Index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -377,19 +380,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Images\accent.png" />
-    <Content Include="Images\bullet.png" />
-    <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
@@ -397,6 +387,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="carpoolApp\directives\" />
     <Folder Include="Content\Images\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

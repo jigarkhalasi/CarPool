@@ -1,4 +1,5 @@
 ﻿using CarPool.Domain;
+using CarPool.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,13 +45,26 @@ namespace CarPool.Repository
             return await _context.tblUserRGDetails.FindAsync(grId);
         }
 
-        public async Task<IEnumerable<tblUserRGDetail>> GetAllUserGroupRequest()
+        public async Task<IEnumerable<tblUserRGDetail>> GetAllUserGroupRequest(int rGroupId)
         {
             return await Task.Run(() =>
             {
-                return _context.tblUserRGDetails.Where(x=> x.IsDeleted == false).ToList();
+                return _context.tblUserRGDetails.Where(x => x.IsDeleted == false && x.RGroupId == rGroupId).ToList();
             });
         }
+
+        public async Task<tblUserRGDetail> approveRejectUserGroupRequest(tblUserRGDetail model)
+        { 
+            var urData = await GetUserGroupRequestById(model.GRId);
+
+            urData.IsActivate = model.IsActivate;
+
+            await _context.SaveChangesAsync();
+
+            return await GetUserGroupRequestById(model.GRId);
+        }
+
+        //approveRejectUserGroupRequest
 
         public async Task<bool> DeleteUserGroupRequestById(int grId)
         {
